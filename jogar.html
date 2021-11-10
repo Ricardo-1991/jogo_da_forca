@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, use-scalable-no"
+    />
+    <title>Jogo da Forca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body onload="gameStart()">
+    <div class="container text-center" id="container" >
+      <a class="mb-3 mt-3 btn btn-outline-primary" href='index.html' >Voltar para o menu inicial</a>
+    
+      <!-- Div Principal -->
+      <div class="row align-items-center">
+          <main id="principal" class="col-sm-6 order-0 ">
+            <div id="tentativas" class="d-flex" style="color: black; border: solid 1px red;"></div> 
+            <div id="div-forca" class="forca">
+              <img id="imagem-forca" src="assets/imagens/forca-inicio.png">
+            </div>    
+          </main>       
+        <section
+          id="conteudo"
+          class="col-sm-6 text-center order-2 container "
+        >
+          <form action="" method="POST" class="text-center">
+            <div class="mb-2 mt-2" style="border: 1px solid purple;">
+              <label class="form-label" for="">Quer arriscar a palavra?</label>
+              <input
+                name="palavraCompleta"
+                id="palavraCompleta"
+                class="form-control text-center w-100"
+                type="text"
+                placeholder="Digite a palavra completa"
+                onkeydown="pressEnter(event)"
+              />
+            </div>
+          </form>
+          <button
+            type="button"
+            class="btn-danger w-100 m-auto"
+            onclick="riskWord()"
+          >
+            Arriscar!
+          </button>
+        </section>
+        
+      </div>
+
+
+      <section id="teclado" class="row m-auto mt-2 justify-content-center" style="border: 1px solid red;">
+        <div class="row justify-content-center ali">
+          <button
+            type="button"
+            onclick="clickButton(event,'A')"
+            value="a"
+            class="btn btn-dark btn-lg"
+          >
+            A
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'B')"
+            value="b"
+            class="btn btn-dark btn-lg"
+          >
+            B
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'C')"
+            value="c"
+            class="btn btn-dark btn-lg"
+          >
+            C
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'D')"
+            value="d"
+            class="btn btn-dark btn-lg"
+          >
+            D
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'E')"
+            value="e"
+            class="btn btn-dark btn-lg"
+          >
+            E
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'F')"
+            value="f"
+            class="btn btn-dark btn-lg"
+          >
+            F
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'G')"
+            value="g"
+            class="btn btn-dark btn-lg"
+          >
+            G
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'H')"
+            value="h"
+            class="btn btn-dark btn-lg"
+          >
+            H
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'I')"
+            value="i"
+            class="btn btn-dark btn-lg"
+          >
+            I
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'J')"
+            value="j"
+            class="btn btn-dark btn-lg"
+          >
+            J
+          </button>
+        </div>
+
+        <div class="row justify-content-center">
+
+          <button
+            type="button"
+            onclick="clickButton(event,'K')"
+            value="k"
+            class="btn btn-dark btn-lg"
+          >
+            K
+          </button>
+
+          <button
+            type="button"
+            onclick="clickButton(event,'L')"
+            value="l"
+            class="btn btn-dark btn-lg"
+          >
+            L
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'M')"
+            value="m"
+            class="btn btn-dark btn-lg"
+          >
+            M
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'N')"
+            value="n"
+            class="btn btn-dark btn-lg"
+          >
+            N
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'O')"
+            value="o"
+            class="btn btn-dark btn-lg"
+          >
+            O
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'P')"
+            value="p"
+            class="btn btn-dark btn-lg"
+          >
+            P
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'Q')"
+            value="q"
+            class="btn btn-dark btn-lg"
+          >
+            Q
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'R')"
+            value="r"
+            class="btn btn-dark btn-lg"
+          >
+            R
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'S')"
+            value="s"
+            class="btn btn-dark btn-lg"
+          >
+            S
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'T')"
+            value="t"
+            class="btn btn-dark btn-lg"
+          >
+            T
+          </button>
+        </div>
+
+        <div class="row justify-content-center">
+
+          <button
+            type="button"
+            onclick="clickButton(event,'U')"
+            value="u"
+            class="btn btn-dark btn-lg"
+          >
+            U
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'V')"
+            value="v"
+            class="btn btn-dark btn-lg"
+          >
+            V
+          </button>
+
+          <button
+            type="button"
+            onclick="clickButton(event,'X')"
+            value="x"
+            class="btn btn-dark btn-lg"
+          >
+            X
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'W')"
+            value="w"
+            class="btn btn-dark btn-lg"
+          >
+            W
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'Y')"
+            value="y"
+            class="btn btn-dark btn-lg"
+          >
+            Y
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'Ç')"
+            value="ç"
+            class="btn btn-dark btn-lg"
+          >
+            Ç
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,'Z')"
+            value="z"
+            class="btn btn-dark btn-lg"
+          >
+            Z
+          </button>
+          <button
+            type="button"
+            onclick="clickButton(event,' ')"
+            value="z"
+            class="btn btn-dark btn-lg" style="width: auto;"
+          >
+            ESPAÇO
+          </button>
+        </div>
+        
+
+        </section>    
+      </div>
+
+      <footer></footer>
+    </div>
+
+    <script src="assets/js/jquery-3.6.0.min.js" name="" value=""></script>
+    <script src="assets/js/bootstrap.bundle.min.js" name="" value=""></script>
+  </body>
+</html>

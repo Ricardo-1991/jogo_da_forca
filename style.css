@@ -1,0 +1,54 @@
+
+body {
+  font-family: 'Comic Neue', cursive;
+  font-size: 17px;
+}
+
+
+.container {
+  border: 2px solid black;
+}
+
+#teclado {
+  max-width: 600px;
+  height: auto;
+}
+
+/*1920 por 759*/
+#teclado .btn {
+  width: 8%;
+  height: auto;
+  margin: 1px;
+  padding: 5px;
+  font-size: 13px;
+  color:ghostwhite ;
+}
+
+
+
+a {
+  margin: 5px;
+}
+
+.forca {
+  display: flex;
+  border: 1px solid red;
+}
+
+.forca img {
+  max-width: 64%;
+}
+
+#imagem-forca {
+  transition: all ease-out 0.5s;
+}
+
+.regras {
+  line-height: 180%; 
+}
+
+
+
+
+
+

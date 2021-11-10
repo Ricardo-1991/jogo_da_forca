@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Jogo da Forca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <script>
+      jogar = () => {
+        const selection = document.querySelector('#categorias').value
+        if(selection === ''){
+          alert('Selecione pelo menos uma opção para iniciar!')
+          return false
+        } 
+          window.location.href = 'jogar.html?' + selection
+      }
+     </script>
+  </head>
+  <body>
+    <div id="container" class="container text-center">
+      <div id="content" class="m-auto w-100">
+        <header>
+          <h3>Bem vindo ao...</h3>
+          <h1>JOGO DA FORCA</h1>
+        </header>
+        <section class="pt-4">
+
+          
+          <div class="form-control">
+            <h4>Selecione uma categoria de palavras</h3>
+            <select name="Categorias"  id="categorias" class=" form-select-sm">
+              <option value="">Escolha uma opção</option>
+              <option value="frutas">Frutas</option>
+              <option value="objetos">Objetos</option>
+              <option value="paises">Países</option>
+            </select>         
+          </div>
+          <div class="mt-3">
+            <div class="mt-3 m-auto">
+              <button type="button" class="btn btn-primary " style="width: 85px;" onclick="jogar()">JOGAR</button>
+            </div>
+            <div class="accordion mt-3 m-auto" id="accordion">
+              <button class="btn btn-primary" data-bs-toggle="collapse"
+              data-bs-target="#c1"
+              aria-controls="c1">REGRAS</button> 
+              <br />
+            
+            <div id="c1" class="collapse" data-bs-parent="#accordion">
+              <div class="card-body">
+
+               <p class="regras">
+                
+                No menu inicial do jogo, escolha uma categoria de palavras que deseja desvendar e <mark>clique no botão 'Jogar'</mark>. Após isto, utilize os botões disponíveis (letra por letra) ou o campo de arriscar a palavra completa para tentar advinhar a palavra escondida. O jogador terá um total de <mark>6(seis) tentativas</mark>. Estas, diminuirão toda vez que um botão com a letra correspondente da palavra escondida estiver errada. Caso todas as tentativas se esgotem, o jogo finalizará e reiniciará com uma mensagem informando que você perdeu. Caso o jogador opte por tentar arriscar a palavra completa, após digitar toda a palavra, <mark>clique no botão vermelho 'Arriscar!' logo abaixo</mark>. Caso você acerte todas as letras tanto clicando uma por uma nos botões, quanto acertando a palavra completa de modo a digitar toda esta no campo apropriado, uma mensagem aparecerá informando que você ganhou.
+                <h1> BOA DIVERSÃO!</h1>
+               
+               </p> 
+              </div>
+            </div>
+
+            
+              <button class="btn btn-primary mt-3 " data-bs-toggle="collapse"
+              data-bs-target="#c2"
+              aria-controls="c2" style="width: 85px;">SOBRE</button> 
+              <br />
+            
+            <div id="c2" class="collapse" data-bs-parent="#accordion">
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <span>Este jogo tradicional infantil, para além de ser muito divertido e dinâmico, desenvolve algumas competências:</span>  <br/>
+                  <li class="list-group-item list-group-item-primary">Desenvolvimento da compreensão oral e escrita;</li>
+                  <li class="list-group-item list-group-item-success">Aprendizagem de novo vocabulário;</li>
+                  <li class="list-group-item list-group-item-warning">Treino da audição;</li>
+                  <li class="list-group-item list-group-item-danger">Interação e competitividade saudável;</li>
+                  <li class="list-group-item list-group-item-info">Bem estar físico e psicológico geral.</li>
+                  <br/><br/>
+                  <p>
+                    Os jogos infantis educativos são atividades excelentes para promover o desenvolvimento integral da criança. Permitem trabalhar a criatividade, a imaginação, a concentração e capacidade de atenção. Também são excelentes para desenvolver a motricidade e o raciocínio, assim como promover o desenvolvimento social. Tudo isto de forma lúdica e divertida.
+                  </p>
+                </ul>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+
+        <footer></footer>
+      </div>
+    </div>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
