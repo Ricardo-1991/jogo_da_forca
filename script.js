@@ -57,7 +57,7 @@ let words = {
     'EGITO'
   ]
 }
-l
+
 let randomFruits = words.fruits[Math.floor(Math.random() * 2)]
 let randomObjects = words.objects[Math.floor(Math.random() * 15)]
 let randomCountrys = words.countrys[Math.floor(Math.random() * 15)]
